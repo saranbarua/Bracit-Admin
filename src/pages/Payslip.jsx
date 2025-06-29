@@ -1,6 +1,3 @@
-import React from "react";
-import { FaEye } from "react-icons/fa";
-
 const Payslip = () => {
   const payslipData = [
     {
@@ -41,7 +38,6 @@ const Payslip = () => {
               <th className="p-3 font-semibold w-[20%]">
                 DUE DATE <span className="ml-1">⇅</span>
               </th>
-              <th className="p-3 font-semibold w-[5%] text-center">ACTION</th>
             </tr>
           </thead>
           <tbody>
@@ -59,9 +55,6 @@ const Payslip = () => {
                   <td className="p-3">{item.type}</td>
                   <td className="p-3">{item.issueDate}</td>
                   <td className="p-3">{item.dueDate}</td>
-                  <td className="p-3 text-center text-blue-600 cursor-pointer">
-                    <FaEye />
-                  </td>
                 </tr>
               ))
             )}
