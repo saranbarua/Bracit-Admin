@@ -38,49 +38,50 @@ const Schedule = () => {
               <td className="border px-3 py-2 font-medium">
                 9:30 AM – 10:50 AM
               </td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
               <td className="border px-3 py-2 font-semibold">
+                {" "}
                 MKT301 -05 -NAR-07A-08C
               </td>
               <td></td>
               <td className="border px-3 py-2 font-semibold">
-                MKT301 -05 -NAR-07A-08C
+                MKT422 -05 -NAR-07A-08C
               </td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
             </tr>
             <tr>
               <td className="border px-3 py-2 font-medium">
                 11:00 AM – 12:20 PM
               </td>
               <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
               <td className="border px-3 py-2 font-semibold">
-                FIN425 -01 -SSW-07A-06C
+                MKT423-01 -NAR-07A-08C
               </td>
               <td></td>
               <td className="border px-3 py-2 font-semibold">
-                FIN425 -01 -SSW-07A-06C
+                MKT423-01 -NAR-07A-08C
               </td>
-              <td></td>
-              <td></td>
-              <td></td>
             </tr>
             <tr>
               <td className="border px-3 py-2 font-medium">
-                3:30 PM – 4:50 PM
+                12:30 PM – 1:50 PM
               </td>
+              <td></td>
+              <td></td>
               <td></td>
               <td></td>
               <td className="border px-3 py-2 font-semibold">
-                FRN101 -04 -TSK-07B-17C
+                ACT421 -04 -TSK-07B-17C
               </td>
               <td></td>
               <td className="border px-3 py-2 font-semibold">
-                FRN101 -04 -TSK-07B-17C
+                ACT421 -04 -TSK-07B-17C
               </td>
-              <td></td>
-              <td></td>
             </tr>
           </tbody>
         </table>
