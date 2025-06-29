@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import Login from "./pages/Login";
-import Advising from "./pages/Advising";
 import Sidebar from "./Components/Sidebar";
 import Topbar from "./Components/Topbar";
 import Schedule from "./pages/Schedule";
@@ -14,7 +13,7 @@ import Probation from "./pages/Probation";
 import Payslip from "./pages/Payslip";
 import Home from "./pages/Home";
 import PhaseOne from "./pages/PhaseOne";
-import PhaseTwo from "./pages/phaseTwo";
+import PhaseTwo from "./pages/PhaseTwo";
 import Self from "./pages/Self";
 import WishListStatus from "./pages/WishListStatus";
 import WishList from "./pages/WishList";
