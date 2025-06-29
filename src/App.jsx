@@ -13,10 +13,14 @@ import Grades from "./pages/Grades";
 import Probation from "./pages/Probation";
 import Payslip from "./pages/Payslip";
 import Home from "./pages/Home";
+import PhaseOne from "./pages/PhaseOne";
+import PhaseTwo from "./pages/phaseTwo";
+import Self from "./pages/Self";
+import WishListStatus from "./pages/WishListStatus";
 
 // Layout for authenticated routes
 const DashboardLayout = ({ children }) => (
-  <div className="flex flex-col md:flex-row min-h-screen">
+  <div className="flex flex-col md:flex-row">
     {/* Sidebar */}
     <div className="w-full md:w-64 shadow-md">
       <Sidebar />
@@ -50,10 +54,42 @@ const App = () => {
             }
           />
           <Route
-            path="/advising"
+            path="/advising/wishlist"
             element={
               <DashboardLayout>
                 <Advising />
+              </DashboardLayout>
+            }
+          />
+          <Route
+            path="/advising/phase-one"
+            element={
+              <DashboardLayout>
+                <PhaseOne />
+              </DashboardLayout>
+            }
+          />
+          <Route
+            path="/advising/phase-two"
+            element={
+              <DashboardLayout>
+                <PhaseTwo />
+              </DashboardLayout>
+            }
+          />
+          <Route
+            path="/advising/self"
+            element={
+              <DashboardLayout>
+                <Self />
+              </DashboardLayout>
+            }
+          />
+          <Route
+            path="/advising/status"
+            element={
+              <DashboardLayout>
+                <WishListStatus />
               </DashboardLayout>
             }
           />

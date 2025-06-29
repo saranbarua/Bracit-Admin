@@ -7,7 +7,16 @@ const Sidebar = () => {
   const [open, setOpen] = useState(false);
 
   const menuItems = [
-    { name: "Advising", link: "/advising" },
+    {
+      name: "Advising",
+      children: [
+        { name: "Wishlist", link: "/advising/wishlist" },
+        { name: "Pre-Registration Phase One", link: "/advising/phase-one" },
+        { name: "Pre-Registration Phase Two", link: "/advising/phase-two" },
+        { name: "Self Registration", link: "/advising/self" },
+        { name: "Section Seat Status", link: "/advising/status" },
+      ],
+    },
     { name: "Class and Exam Schedule", link: "/schedule" },
     { name: "Scholarship & Waiver History", link: "/scholarship-history" },
     { name: "Course Drop Application", link: "/course-drop" },
@@ -16,6 +25,7 @@ const Sidebar = () => {
     { name: "Grade Sheet", link: "/grades" },
     { name: "Payslip", link: "/payslip" },
   ];
+  const [dropdownOpen, setDropdownOpen] = useState(null);
 
   return (
     <div className="relative">
@@ -44,7 +54,7 @@ const Sidebar = () => {
         </div>
 
         {/* Menu */}
-        <nav className="space-y-2 text-gray-700 font-medium">
+        {/* <nav className="space-y-2 text-gray-700 font-medium">
           {menuItems.map((item, index) => (
             <NavLink
               key={index}
@@ -64,6 +74,75 @@ const Sidebar = () => {
               {item.name}
             </NavLink>
           ))}
+        </nav> */}
+        <nav className="space-y-2 text-gray-700 font-medium">
+          {menuItems.map((item, index) => {
+            const isParent = !!item.children;
+
+            return (
+              <div key={index}>
+                {/* Parent item */}
+                {isParent ? (
+                  <button
+                    onClick={() =>
+                      setDropdownOpen(
+                        dropdownOpen === item.name ? null : item.name
+                      )
+                    }
+                    className={`flex items-center gap-3 py-2 px-3 w-full rounded-md transition text-sm truncate ${
+                      dropdownOpen === item.name
+                        ? "bg-blue-600 text-white font-semibold"
+                        : "hover:bg-gray-100"
+                    }`}
+                  >
+                    <span className="w-6 h-6 flex items-center justify-center text-base font-bold">
+                      {item.name[0]}
+                    </span>
+                    {item.name}
+                  </button>
+                ) : (
+                  <NavLink
+                    to={item.link}
+                    className={({ isActive }) =>
+                      `flex items-center gap-3 py-2 px-3 rounded-md transition text-sm truncate ${
+                        isActive
+                          ? "bg-blue-600 text-white font-semibold"
+                          : "hover:bg-gray-100"
+                      }`
+                    }
+                    onClick={() => setOpen(false)}
+                  >
+                    <span className="w-6 h-6 flex items-center justify-center text-base font-bold">
+                      {item.name[0]}
+                    </span>
+                    {item.name}
+                  </NavLink>
+                )}
+
+                {/* Children */}
+                {isParent && dropdownOpen === item.name && (
+                  <div className="ml-6 mt-1 space-y-1 text-sm text-gray-600">
+                    {item.children.map((child, childIndex) => (
+                      <NavLink
+                        key={childIndex}
+                        to={child.link}
+                        className={({ isActive }) =>
+                          `block px-3 py-1 rounded transition ${
+                            isActive
+                              ? "bg-blue-600 text-white font-medium"
+                              : "hover:text-gray-800"
+                          }`
+                        }
+                        onClick={() => setOpen(false)}
+                      >
+                        {child.name}
+                      </NavLink>
+                    ))}
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </nav>
       </div>
     </div>

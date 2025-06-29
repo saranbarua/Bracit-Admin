@@ -12,7 +12,10 @@ export default function Login({ setLogin }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (username === "saran" && password === "123456") {
+    if (
+      username === "mahraf.tahmin.chowdhury@g.bracu.ac.bd" &&
+      password === "mahraf2001 "
+    ) {
       localStorage.setItem("isLoggedIn", "true"); // 🔐 persist login
       setLogin(true);
       navigate("/home"); // or dashboard route
