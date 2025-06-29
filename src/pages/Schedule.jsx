@@ -6,9 +6,9 @@ const Schedule = () => {
         <h1 className="text-xl md:text-2xl font-bold text-gray-800">
           Class and Exam Schedule
         </h1>
-        <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded text-sm font-medium">
+        {/* <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded text-sm font-medium">
           Change Semester ▼
-        </button>
+        </button> */}
       </div>
 
       {/* Class Schedule */}

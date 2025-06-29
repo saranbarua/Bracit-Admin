@@ -25,9 +25,9 @@ export default function PhaseTwo() {
         </div>
 
         {/* Grade Sheet Button */}
-        <button className="mt-4 md:mt-0 bg-blue-500 hover:bg-blue-600 text-white text-sm px-4 py-2 rounded flex items-center gap-1">
+        {/* <button className="mt-4 md:mt-0 bg-blue-500 hover:bg-blue-600 text-white text-sm px-4 py-2 rounded flex items-center gap-1">
           👁️ View Grade Sheet
-        </button>
+        </button> */}
       </div>
 
       {/* Credit Info */}
