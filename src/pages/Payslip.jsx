@@ -9,6 +9,7 @@ const Payslip = () => {
       type: "Registration",
       issueDate: "23/02/2025",
       dueDate: "10/03/2025",
+      amount: "67,100 BDT",
     },
   ];
 
