@@ -17,6 +17,7 @@ import PhaseOne from "./pages/PhaseOne";
 import PhaseTwo from "./pages/phaseTwo";
 import Self from "./pages/Self";
 import WishListStatus from "./pages/WishListStatus";
+import WishList from "./pages/WishList";
 
 // Layout for authenticated routes
 const DashboardLayout = ({ children }) => (
@@ -57,7 +58,7 @@ const App = () => {
             path="/advising/wishlist"
             element={
               <DashboardLayout>
-                <Advising />
+                <WishList />
               </DashboardLayout>
             }
           />
