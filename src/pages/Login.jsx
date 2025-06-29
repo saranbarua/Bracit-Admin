@@ -14,7 +14,7 @@ export default function Login({ setLogin }) {
     e.preventDefault();
     if (
       username === "mahraf.tahmin.chowdhury@g.bracu.ac.bd" &&
-      password === "mahraf2001 "
+      password === "mahraf2001"
     ) {
       localStorage.setItem("isLoggedIn", "true"); // 🔐 persist login
       setLogin(true);
