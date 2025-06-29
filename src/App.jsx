@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
-import Login from "./Pages/Login";
 import Sidebar from "./Components/Sidebar";
 import Topbar from "./Components/Topbar";
 import Advising from "./Pages/Advising";
