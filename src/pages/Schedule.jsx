@@ -112,6 +112,25 @@ const Schedule = () => {
               <td className="border px-3 py-2">MID</td>
               <td className="border px-3 py-2">MKT301</td>
             </tr>
+            <tr>
+              <td className="border px-3 py-2">TUESDAY (2025-03-18)</td>
+              <td className="border px-3 py-2">8:30 AM – 10:30 AM</td>
+              <td className="border px-3 py-2">FINAL</td>
+              <td className="border px-3 py-2">FRN101</td>
+            </tr>
+            <tr>
+              <td className="border px-3 py-2">SUNDAY (2025-03-23)</td>
+              <td className="border px-3 py-2">4:30 PM – 6:30 PM</td>
+              <td className="border px-3 py-2">FINAL</td>
+              <td className="border px-3 py-2">MKT301</td>
+            </tr>
+            <tr>
+              <td className="border px-3 py-2">TUESDAY (2025-03-18)</td>
+              <td className="border px-3 py-2">8:30 AM – 10:30 AM</td>
+              <td className="border px-3 py-2">FINAL</td>
+              <td className="border px-3 py-2">FRN101</td>
+            </tr>
+
             {/* Add more exams as needed */}
           </tbody>
         </table>
