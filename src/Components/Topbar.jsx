@@ -3,35 +3,20 @@ import fullscreen from "../assets/fullscreen_icon.svg";
 import notification from "../assets/notification-bell.svg";
 import profile from "../assets/profile.jpeg";
 import { useEffect, useRef, useState } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
+
 const Topbar = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
   const [profileOpen, setProfileOpen] = useState(false);
-  const profileRef = useRef();
-
-  // Close dropdown when clicked outside
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (profileRef.current && !profileRef.current.contains(event.target)) {
-        setProfileOpen(false);
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
-
-  const handleLogout = () => {
-    localStorage.removeItem("isLoggedIn");
-    window.location.href = "/"; // force reload to login
-  };
-
   const [notificationOpen, setNotificationOpen] = useState(false);
+
+  const profileRef = useRef(null);
   const notificationRef = useRef(null);
+
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (profileRef.current && !profileRef.current.contains(event.target)) {
         setProfileOpen(false);
       }
+
       if (
         notificationRef.current &&
         !notificationRef.current.contains(event.target)
@@ -44,47 +29,37 @@ const Topbar = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  return (
-    <div className="flex items-center justify-between p-4 md:px-8 border-b border-black/90">
-      {/* Left: Title */}
-      <div>
-        <h2 className="text-xl font-semibold">Student</h2>
-      </div>
+  const handleLogout = () => {
+    localStorage.removeItem("isLoggedIn");
+    window.location.href = "/";
+  };
 
-      {/* Mobile Toggle Button */}
-      <div className="md:hidden">
-        <button onClick={() => setMenuOpen(!menuOpen)}>
-          {menuOpen ? (
-            <FaTimes className="h-6 w-6 text-gray-800" />
-          ) : (
-            <FaBars className="h-6 w-6 text-gray-800" />
-          )}
-        </button>
+  return (
+    <div className="flex items-center justify-between px-4 md:px-8 py-3 border-b border-black/90 bg-white">
+      {/* Title */}
+      <div>
+        <h2 className="text-xl font-semibold text-gray-800">Student</h2>
       </div>
 
       {/* Right Section */}
-      <div
-        className={`flex flex-col md:flex-row items-center gap-4 absolute md:static top-16 left-0 w-full md:w-auto bg-white md:bg-transparent p-4 md:p-0 z-50 border-t md:border-none transition-all duration-300 ease-in-out ${
-          menuOpen ? "block" : "hidden md:flex"
-        }`}
-      >
-        {/* Search Bar */}
-        <div className="flex items-center border pl-3 pr-2 gap-2 bg-white border-gray-500/30 h-[42px] rounded-full w-full sm:w-72">
+      <div className="flex items-center gap-4">
+        {/* Search */}
+        <div className="flex items-center border pl-3 pr-2 gap-2 bg-white border-gray-500/30 h-[42px] rounded-full w-44 sm:w-64">
           <img src={search} alt="search icon" className="h-4 w-4" />
           <input
             type="text"
             placeholder="Search"
-            className="w-full h-full outline-none text-gray-500 placeholder-gray-500 text-sm bg-transparent"
+            className="w-full h-full outline-none text-gray-500 text-sm bg-transparent"
           />
         </div>
 
-        {/* Icons */}
-        <div className="flex relative gap-4 items-center">
-          <img
-            src={fullscreen}
-            alt="fullscreen"
-            className="h-6 w-6 cursor-pointer"
-          />
+        {/* Fullscreen & Notification */}
+        <img
+          src={fullscreen}
+          alt="fullscreen"
+          className="h-6 w-6 cursor-pointer"
+        />
+        <div className="relative">
           <img
             src={notification}
             alt="notification"
@@ -94,14 +69,11 @@ const Topbar = () => {
           {notificationOpen && (
             <div
               ref={notificationRef}
-              className="absolute right-20 top-12 mt-2 w-96 bg-white rounded-xl shadow-xl z-50"
+              className="absolute right-0 top-10 mt-2 w-96 bg-white rounded-xl shadow-xl z-50"
             >
-              {/* Header */}
               <div className="bg-[#2c4fa1] text-white px-4 py-3 rounded-t-xl font-semibold text-lg">
                 User Notifications
               </div>
-
-              {/* Notification List */}
               <div className="p-4 space-y-4 max-h-96 overflow-y-auto">
                 {[
                   {
@@ -113,16 +85,8 @@ const Topbar = () => {
                     time: "Mar 6, 2025, 8:07:21 AM",
                   },
                   {
-                    title: "Payslip Deadline Alert",
-                    time: "Mar 4, 2025, 8:09:43 AM",
-                  },
-                  {
                     title: "Registration Payslip Alert",
                     time: "Feb 23, 2025, 1:06:07 PM",
-                  },
-                  {
-                    title: "Registration Payslip Alert",
-                    time: "Feb 4, 2025, 12:19:02 PM",
                   },
                 ].map((item, index) => (
                   <div key={index} className="flex gap-3 items-start">
@@ -152,16 +116,21 @@ const Topbar = () => {
               </div>
             </div>
           )}
+        </div>
 
+        {/* Profile */}
+        <div className="relative">
           <img
-            alt="user profile"
-            className="w-10 h-10 border rounded-full object-cover"
             src={profile}
+            alt="user profile"
+            className="w-10 h-10 border rounded-full object-cover cursor-pointer"
             onClick={() => setProfileOpen(!profileOpen)}
           />
-          {/* Profile Dropdown */}
           {profileOpen && (
-            <div className="absolute right-0 top-12 mt-2 w-72 bg-white rounded-lg shadow-xl p-4 z-50">
+            <div
+              ref={profileRef}
+              className="absolute right-0 top-10 mt-2 w-72 bg-white rounded-lg shadow-xl p-4 z-50"
+            >
               <div className="flex items-center gap-3 mb-4">
                 <img
                   src={profile}
