@@ -25,6 +25,25 @@ const Topbar = () => {
     window.location.href = "/"; // force reload to login
   };
 
+  const [notificationOpen, setNotificationOpen] = useState(false);
+  const notificationRef = useRef(null);
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (profileRef.current && !profileRef.current.contains(event.target)) {
+        setProfileOpen(false);
+      }
+      if (
+        notificationRef.current &&
+        !notificationRef.current.contains(event.target)
+      ) {
+        setNotificationOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
   return (
     <div className="flex items-center justify-between p-4 md:px-8 border-b border-black/90">
       {/* Left: Title */}
@@ -60,7 +79,7 @@ const Topbar = () => {
         </div>
 
         {/* Icons */}
-        <div className="flex gap-4 items-center">
+        <div className="flex relative gap-4 items-center">
           <img
             src={fullscreen}
             alt="fullscreen"
@@ -70,7 +89,70 @@ const Topbar = () => {
             src={notification}
             alt="notification"
             className="h-6 w-6 cursor-pointer"
+            onClick={() => setNotificationOpen(!notificationOpen)}
           />
+          {notificationOpen && (
+            <div
+              ref={notificationRef}
+              className="absolute right-20 top-12 mt-2 w-96 bg-white rounded-xl shadow-xl z-50"
+            >
+              {/* Header */}
+              <div className="bg-[#2c4fa1] text-white px-4 py-3 rounded-t-xl font-semibold text-lg">
+                User Notifications
+              </div>
+
+              {/* Notification List */}
+              <div className="p-4 space-y-4 max-h-96 overflow-y-auto">
+                {[
+                  {
+                    title: "Payment Confirmation Alert",
+                    time: "Mar 6, 2025, 11:26:11 AM",
+                  },
+                  {
+                    title: "Payslip Deadline Alert",
+                    time: "Mar 6, 2025, 8:07:21 AM",
+                  },
+                  {
+                    title: "Payslip Deadline Alert",
+                    time: "Mar 4, 2025, 8:09:43 AM",
+                  },
+                  {
+                    title: "Registration Payslip Alert",
+                    time: "Feb 23, 2025, 1:06:07 PM",
+                  },
+                  {
+                    title: "Registration Payslip Alert",
+                    time: "Feb 4, 2025, 12:19:02 PM",
+                  },
+                ].map((item, index) => (
+                  <div key={index} className="flex gap-3 items-start">
+                    <div className="w-8 h-8 flex items-center justify-center bg-gray-200 rounded-full">
+                      <svg
+                        className="w-5 h-5 text-gray-600"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                        />
+                      </svg>
+                    </div>
+                    <div>
+                      <p className="text-sm font-medium text-gray-800">
+                        {item.title}
+                      </p>
+                      <p className="text-xs text-gray-500">{item.time}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
           <img
             alt="user profile"
             className="w-10 h-10 border rounded-full object-cover"

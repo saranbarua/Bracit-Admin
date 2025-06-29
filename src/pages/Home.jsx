@@ -33,7 +33,7 @@ const Home = () => {
         {/* Activity Card */}
         <div className="bg-white rounded-lg shadow-sm p-6">
           <h2 className="text-md font-semibold mb-4 text-gray-800">Activity</h2>
-          <div className="border-l-4 border-blue-500 pl-4">
+          {/* <div className="border-l-4 border-blue-500 pl-4">
             <p className="text-base font-semibold text-gray-800 mb-1">
               First Time Probation Other
             </p>
@@ -52,7 +52,7 @@ const Home = () => {
             >
               View
             </Link>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
