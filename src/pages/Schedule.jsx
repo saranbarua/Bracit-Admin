@@ -38,15 +38,17 @@ const Schedule = () => {
               <td className="border px-3 py-2 font-medium">
                 9:30 AM – 10:50 AM
               </td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
+              <td className="border"></td>
+              <td className="border"></td>
+              <td className="border"></td>
+              <td className="border"></td>
+
               <td className="border px-3 py-2 font-semibold">
                 {" "}
                 MKT301 -05 -NAR-07A-08C
               </td>
-              <td></td>
+              <td className="border"></td>
+
               <td className="border px-3 py-2 font-semibold">
                 MKT422 -05 -NAR-07A-08C
               </td>
@@ -55,14 +57,16 @@ const Schedule = () => {
               <td className="border px-3 py-2 font-medium">
                 11:00 AM – 12:20 PM
               </td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
+              <td className="border"></td>
+              <td className="border"></td>
+              <td className="border"></td>
+              <td className="border"></td>
+
               <td className="border px-3 py-2 font-semibold">
                 MKT423-01 -NAR-07A-08C
               </td>
-              <td></td>
+              <td className="border"></td>
+
               <td className="border px-3 py-2 font-semibold">
                 MKT423-01 -NAR-07A-08C
               </td>
@@ -71,14 +75,16 @@ const Schedule = () => {
               <td className="border px-3 py-2 font-medium">
                 12:30 PM – 1:50 PM
               </td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
+              <td className="border"></td>
+              <td className="border"></td>
+              <td className="border"></td>
+              <td className="border"></td>
+
               <td className="border px-3 py-2 font-semibold">
                 ACT421 -04 -TSK-07B-17C
               </td>
-              <td></td>
+              <td className="border"></td>
+
               <td className="border px-3 py-2 font-semibold">
                 ACT421 -04 -TSK-07B-17C
               </td>
@@ -101,36 +107,41 @@ const Schedule = () => {
           </thead>
           <tbody className="text-gray-800">
             <tr>
-              <td className="border px-3 py-2">TUESDAY (2025-03-18)</td>
+              <td className="border px-3 py-2">SATURDAY (2025-07-26)</td>
               <td className="border px-3 py-2">8:30 AM – 10:30 AM</td>
               <td className="border px-3 py-2">MID</td>
-              <td className="border px-3 py-2">FRN101</td>
+              <td className="border px-3 py-2">mkt422</td>
             </tr>
             <tr>
-              <td className="border px-3 py-2">SUNDAY (2025-03-23)</td>
+              <td className="border px-3 py-2">SUNDAY (2025-07-27)</td>
               <td className="border px-3 py-2">4:30 PM – 6:30 PM</td>
               <td className="border px-3 py-2">MID</td>
-              <td className="border px-3 py-2">MKT301</td>
+              <td className="border px-3 py-2">ACT421</td>
             </tr>
             <tr>
-              <td className="border px-3 py-2">TUESDAY (2025-03-18)</td>
-              <td className="border px-3 py-2">8:30 AM – 10:30 AM</td>
-              <td className="border px-3 py-2">FINAL</td>
-              <td className="border px-3 py-2">FRN101</td>
-            </tr>
-            <tr>
-              <td className="border px-3 py-2">SUNDAY (2025-03-23)</td>
+              <td className="border px-3 py-2">MONDAY (2025-07-28)</td>
               <td className="border px-3 py-2">4:30 PM – 6:30 PM</td>
-              <td className="border px-3 py-2">FINAL</td>
-              <td className="border px-3 py-2">MKT301</td>
+              <td className="border px-3 py-2">MID</td>
+              <td className="border px-3 py-2">MKT423</td>
             </tr>
             <tr>
-              <td className="border px-3 py-2">TUESDAY (2025-03-18)</td>
+              <td className="border px-3 py-2">SUNDAY (2025-09-14)</td>
               <td className="border px-3 py-2">8:30 AM – 10:30 AM</td>
               <td className="border px-3 py-2">FINAL</td>
-              <td className="border px-3 py-2">FRN101</td>
+              <td className="border px-3 py-2">ACT421</td>
             </tr>
-
+            <tr>
+              <td className="border px-3 py-2">TUESDAY (2025-09-16)</td>
+              <td className="border px-3 py-2">2:30 PM – 4:30 AM</td>
+              <td className="border px-3 py-2">FINAL</td>
+              <td className="border px-3 py-2">MKT423</td>
+            </tr>
+            <tr>
+              <td className="border px-3 py-2">THURSDAY (2025-09-18)</td>
+              <td className="border px-3 py-2">12:30 PM – 2:30 PM</td>
+              <td className="border px-3 py-2">FINAL</td>
+              <td className="border px-3 py-2">MKT422</td>
+            </tr>
             {/* Add more exams as needed */}
           </tbody>
         </table>
