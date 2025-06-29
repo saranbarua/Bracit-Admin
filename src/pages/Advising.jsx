@@ -1,11 +1,5 @@
-import React from 'react';
+import React from "react";
 
-const Advising = () => {
-    return (
-        <div>
-            <h1>Advising</h1>
-        </div>
-    );
-};
-
-export default Advising;
+export default function Advising() {
+  return <div>Advising</div>;
+}

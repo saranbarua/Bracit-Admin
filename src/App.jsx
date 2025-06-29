@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
+import Login from "./pages/Login";
+import Advising from "./pages/Advising";
 import Sidebar from "./Components/Sidebar";
 import Topbar from "./Components/Topbar";
-import Advising from "./Pages/Advising";
-import Schedule from "./Pages/Schedule";
-import ScholarshipHistory from "./Pages/ScholarshipHistory";
-import CourseDrop from "./Pages/CourseDrop";
-import SemesterDrop from "./Pages/SemesterDrop";
-import DepartmentChange from "./Pages/DepartmentChange";
-import Grades from "./Pages/Grades";
-import Probation from "./Pages/Probation";
-import Payslip from "./Pages/Payslip";
+import Schedule from "./pages/Schedule";
+import ScholarshipHistory from "./pages/ScholarshipHistory";
+import CourseDrop from "./pages/CourseDrop";
+import SemesterDrop from "./pages/SemesterDrop";
+import DepartmentChange from "./pages/DepartmentChange";
+import Grades from "./pages/Grades";
+import Probation from "./pages/Probation";
+import Payslip from "./pages/Payslip";
 import Home from "./pages/Home";
 
 // Layout for authenticated routes
